@@ -8,36 +8,20 @@
         <div class="col-md-2">Test</div>
         <div class="col-md-2">Done</div>
     </div>
-    <div class="row">
-        <div class="col-md-2 snap_task001">
-            <div class="task" ng-model="list1" ng-hide="!list1.title">{{list1.title}}
-                <button class="btn btn-default" ng-click="fromBackLogToToDo(list1)" ng-hide="!list1.title">N</button>
+    <div class="row" ng-repeat="task in taskList">
+        <div class="col-md-2">
+            <div class="task" ng-hide="!task._isInColumn('BackLog')">{{task._title}}
+                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, 'ToDo')">N</button>
             </div>
         </div>
-        <div class="col-md-2 snap_task001">
-            <div class="task" ng-model="list2" ng-hide="!list2.title">{{list2.title}}
-                <button class="btn btn-default" ng-hide="!list2.title" ng-click="fromToDoToBackLog(list2)">P</button>
+        <div class="col-md-2">
+            <div class="task" ng-hide="!task._isInColumn('ToDo')">{{task._title}}
+                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, 'BackLog')">P</button>
             </div>
         </div>
-        <div class="col-md-2 snap_task001"></div>
-        <div class="col-md-2 snap_task001"></div>
-        <div class="col-md-2 snap_task001"></div>
-        <div class="col-md-2 snap_task001"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-2 snap_task002"><div class="task002">Perceval 002</div></div>
-        <div class="col-md-2 snap_task002"></div>
-        <div class="col-md-2 snap_task002"></div>
-        <div class="col-md-2 snap_task002"></div>
-        <div class="col-md-2 snap_task002"></div>
-        <div class="col-md-2 snap_task002"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-2 snap_task003"><div class="task003">Perceval 003</div></div>
-        <div class="col-md-2 snap_task003"></div>
-        <div class="col-md-2 snap_task003"></div>
-        <div class="col-md-2 snap_task003"></div>
-        <div class="col-md-2 snap_task003"></div>
-        <div class="col-md-2 snap_task003"></div>
+        <div class="col-md-2 "></div>
+        <div class="col-md-2 "></div>
+        <div class="col-md-2 "></div>
+        <div class="col-md-2 "></div>
     </div>
 </div>
