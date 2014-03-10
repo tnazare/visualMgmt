@@ -1,27 +1,14 @@
 <div class="container" ng-controller="BoardController">
     <h1>Board's Title</h1>
-    <div class="row">
-        <div class="col-md-2">Backlog</div>
-        <div class="col-md-2">To Do</div>
-        <div class="col-md-2">WIP</div>
-        <div class="col-md-2">To deploy</div>
-        <div class="col-md-2">Test</div>
-        <div class="col-md-2">Done</div>
+    <div class="row" >
+        <div class="col-md-2" ng-repeat="column in columnList" >{{column._id}}: {{column._title}}</div>
     </div>
     <div class="row" ng-repeat="task in taskList">
-        <div class="col-md-2">
-            <div class="task" ng-hide="!task._isInColumn('BackLog')">{{task._title}}
-                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, 'ToDo')">N</button>
+        <div class="col-md-2" ng-repeat="column in columnList">
+            <div class="task" ng-hide="!task._isInColumn(column._id)">{{task._title}}
+                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, column._prev)" ng-hide="column._prev === null">P</button>
+                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, column._next)" ng-hide="column._next === null">N</button>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="task" ng-hide="!task._isInColumn('ToDo')">{{task._title}}
-                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, 'BackLog')">P</button>
-            </div>
-        </div>
-        <div class="col-md-2 "></div>
-        <div class="col-md-2 "></div>
-        <div class="col-md-2 "></div>
-        <div class="col-md-2 "></div>
     </div>
 </div>
