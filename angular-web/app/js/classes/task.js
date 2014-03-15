@@ -1,7 +1,7 @@
 'use strict';
 
 
-var Step = {
+angular.module('visualMgmt.task', []) (function() {
 
     var list = [],
 
@@ -17,4 +17,4 @@ var Step = {
 
 
 
-};
+})();

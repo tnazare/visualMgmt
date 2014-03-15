@@ -5,9 +5,9 @@
     </div>
     <div class="row" ng-repeat="task in taskList">
         <div class="col-md-2" ng-repeat="column in columnList">
-            <div class="task" ng-hide="!task._isInColumn(column._id)">{{task._title}}
-                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, column._prev)" ng-hide="column._prev === null">P</button>
-                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, taskList, column._next)" ng-hide="column._next === null">N</button>
+            <div class="task" ng-hide="!isInColumn(task,column)">{{task._title}}
+                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, column._prev)" ng-hide="column._prev === null">P</button>
+                <button class="btn btn-default" ng-click="moveItemFromAColumnToAnother(task, column._next)" ng-hide="column._next === null">N</button>
             </div>
         </div>
     </div>

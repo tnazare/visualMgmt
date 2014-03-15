@@ -1,0 +1,27 @@
+[
+    {   "_id": 1,
+        "_title": "Backlog",
+        "_prev": null,
+        "_next": 2
+    },
+    {   "_id": 2,
+        "_title": "To Do",
+        "_prev": 1,
+        "_next": 3
+    },
+    {   "_id": 3,
+        "_title": "Work In Progress",
+        "_prev": 2,
+        "_next": 4
+    },
+    {   "_id": 4,
+        "_title": "Test",
+        "_prev": 3,
+        "_next": 5
+    },
+    {   "_id": 5,
+        "_title": "Done",
+        "_prev": 4,
+        "_next": null
+    }
+]
